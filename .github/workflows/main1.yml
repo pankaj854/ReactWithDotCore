@@ -1,0 +1,17 @@
+name: Scheduled Workflow
+
+on:
+  schedule:
+   
+    - cron: "0 2 * * *"
+
+jobs:
+  run-scheduled-task:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run script
+        run: echo "This is a scheduled run at $(date)"
